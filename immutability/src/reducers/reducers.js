@@ -30,11 +30,19 @@ export const reducer = (state, action) => {
             }
         ]
         case "TOGGLE_TODO":
-            return [
-                {
-                    
+            let clicknewState = 
+            state.map(state => {
+                if (state.id === action.payload){
+                    return{
+                        ...state,
+                        completed: !state.completed
+                    }
+                    }else{
+                        return state
                 }
-            ]
+            })
+            return clicknewState;
+        
 
     default: return state;
     }

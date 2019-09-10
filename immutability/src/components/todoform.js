@@ -30,7 +30,7 @@ const Todoform = () => {
 
                     {state.map(state => {
                         return (
-                        <p onClick={() => console.log('click')}> 
+                        <p onClick={() => dispatch({type: "TOGGLE_TODO", payload:state.id})}> 
                             {state.item + ', '} 
                         </p>
                         )
