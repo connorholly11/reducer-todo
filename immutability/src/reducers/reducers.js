@@ -1,3 +1,4 @@
+import Todolist from "../components/todolist"
 
 
 export const initalState = [
@@ -42,6 +43,17 @@ export const reducer = (state, action) => {
                 }
             })
             return clicknewState;
+
+        case "COMPLETED_TODO":
+            let completed = 
+            state.filter(state => {
+                if (state.completed === true){
+                    return !state.completed
+                }else{
+                    return state
+                }
+            })
+            return completed
         
 
     default: return state;

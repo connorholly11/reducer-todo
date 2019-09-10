@@ -39,7 +39,7 @@ const Todoform = () => {
                 </div>
                 <input type="text" name="todo" placeholder="todo" value={newtodo} onChange={handlechange}></input>
                 <button onClick={()=> dispatch({type: "ADD_TODO", payload:newtodo})  }> ADD TODO </button>
-                <button> CLEAR COMPLETED TASKS </button>
+                <button onClick={() => dispatch({type: "COMPLETED_TODO"})}> CLEAR COMPLETED TASKS </button>
             </form>
         </div>
     )
