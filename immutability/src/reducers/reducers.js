@@ -21,12 +21,14 @@ export const initalState = [
 export const reducer = (state, action) => {
     switch(action.type){
         case "ADD_TODO":
-        return {
+        return [
             ...state,
+            {
             item: action.payload,
             completed:false,
             id: Date.now()
         }
+    ]
 
     default: return state;
     }

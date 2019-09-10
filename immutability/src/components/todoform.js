@@ -8,15 +8,29 @@ const Todoform = () => {
     console.log('state',state)
 
     const handlechange = e => {
-        setNewtodo(e.target.value)
+        // setNewtodo(e.target.value)
+        let value = e.target.value;
+            if (value !== null) {
+                setNewtodo(value)
+            }
     }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+    }
+
 
     return(
         <div>
             <h1>FORM</h1>
-            <p>{state.item}</p>
-            <input type="text" name="todo" placeholder="todo" value={newtodo} onChange={handlechange}></input>
-            <button onClick={()=> dispatch({type: "ADD_TODO", payload:newtodo})  }> ADD TODO </button>
+            <form onSubmit={handleSubmit}>
+                <p>{state.map(state => {
+                    return state.item + ', '
+                    })}</p>
+                {/* <p>{state.item}</p> */}
+                <input type="text" name="todo" placeholder="todo" value={newtodo} onChange={handlechange}></input>
+                <button onClick={()=> dispatch({type: "ADD_TODO", payload:newtodo})  }> ADD TODO </button>
+            </form>
         </div>
     )
 }
