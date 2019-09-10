@@ -2,6 +2,7 @@ import React, {useReducer} from 'react';
 import './App.css';
 import {reducer, initalState} from './reducers/reducers';
 import TodoForm from './components/todoform';
+import Todolist from './components/todolist';
 
 
 function App() {
@@ -10,15 +11,18 @@ function App() {
   
 
   const [state, dispatch] = useReducer(reducer, initalState)
+
+//   const toggle = (id) => {
+//     console.log('toggleworking')
+//     setNewtodo({
+        
+//     })
+// }
   
   
   return (
     <div className="App">
       <h1> Todo </h1>
-
-      <h3> {state.map(state => {
-        return state.item + ', '
-      })} </h3>
 
       <TodoForm/>
     </div>

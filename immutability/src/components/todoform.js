@@ -19,17 +19,27 @@ const Todoform = () => {
         e.preventDefault();
     }
 
+    
+
 
     return(
         <div>
             <h1>FORM</h1>
             <form onSubmit={handleSubmit}>
-                <p>{state.map(state => {
-                    return state.item + ', '
-                    })}</p>
-                {/* <p>{state.item}</p> */}
+                <div>
+
+                    {state.map(state => {
+                        return (
+                        <p onClick={() => console.log('click')}> 
+                            {state.item + ', '} 
+                        </p>
+                        )
+                        })
+                    }
+                </div>
                 <input type="text" name="todo" placeholder="todo" value={newtodo} onChange={handlechange}></input>
                 <button onClick={()=> dispatch({type: "ADD_TODO", payload:newtodo})  }> ADD TODO </button>
+                <button> CLEAR COMPLETED TASKS </button>
             </form>
         </div>
     )

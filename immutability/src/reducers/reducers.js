@@ -24,11 +24,17 @@ export const reducer = (state, action) => {
         return [
             ...state,
             {
-            item: action.payload,
-            completed:false,
-            id: Date.now()
-        }
-    ]
+                item: action.payload,
+                completed:false,
+                id: Date.now()
+            }
+        ]
+        case "TOGGLE_TODO":
+            return [
+                {
+                    
+                }
+            ]
 
     default: return state;
     }
