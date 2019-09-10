@@ -11,7 +11,11 @@ function App() {
   return (
     <div className="App">
       <h1> Todo </h1>
-      <div> {state.item} </div>
+      
+      <h3> {state.map(state => {
+        return state.item + ', '
+      })} </h3>
+
       <TodoForm/>
     </div>
   );
