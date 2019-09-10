@@ -1,4 +1,3 @@
-import Todolist from "../components/todolist"
 
 
 export const initalState = [
@@ -36,7 +35,8 @@ export const reducer = (state, action) => {
                 if (state.id === action.payload){
                     return{
                         ...state,
-                        completed: !state.completed
+                        completed: !state.completed,
+                        // className='completed'
                     }
                     }else{
                         return state

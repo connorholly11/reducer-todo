@@ -7,17 +7,6 @@ import Todolist from './components/todolist';
 
 function App() {
   console.log(initalState);
-
-  
-
-  const [state, dispatch] = useReducer(reducer, initalState)
-
-//   const toggle = (id) => {
-//     console.log('toggleworking')
-//     setNewtodo({
-        
-//     })
-// }
   
   
   return (
